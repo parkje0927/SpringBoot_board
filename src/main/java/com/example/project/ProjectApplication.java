@@ -20,6 +20,7 @@ public class ProjectApplication extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(ProjectApplication.class);
 	}
+	
 
 	@Bean
 	public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
