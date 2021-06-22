@@ -1,0 +1,26 @@
+
+<!--
+제목
+작성일
+내용
+수정, 삭제 버튼
+-->
+
+<h1>게시글 보기</h1>
+
+{{#boardDto}}
+    <h2><th class = "text">{{title}}</th></h2>
+    <th>작성일 : {{createdDate}}</th> <br><br><br>
+    <th>{{content}}</th><br><br><br>
+
+    <a href = "/post/edit/{{id}}">
+        <button id = "update-btn">수정</button>
+    </a>
+
+    <form action = "/post/{{id}}" method = "post" id = "delete-form">
+        <input type = "hidden" name = "_method" value = "delete"/>
+        <button id = "delete-btn">삭제</button>
+    </form>
+
+{{/boardDto}}
+

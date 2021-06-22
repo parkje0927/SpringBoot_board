@@ -1,0 +1,24 @@
+
+<table>
+    <tr>
+        <th class = "two wide">번호</th>
+        <th class = "ten wide">글제목</th>
+        <th class = "two wide">작성자</th>
+        <th class = "three wide">작성일</th>
+    </tr>
+
+    <tbody>
+    {{#boardList}}
+        <tr>
+            <td>{{id}}</td>
+            <td><a href = "/post/{{id}}">{{title}}</a></td>
+            <td>{{writer}}</td>
+            <td>{{createdDate}}</td>
+        </tr>
+    {{/boardList}}
+    </tbody>
+
+    <a href = "/">
+        <button>뒤로가기</button>
+    </a>
+</table>

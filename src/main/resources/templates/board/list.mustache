@@ -1,0 +1,52 @@
+
+<!--
+글쓰기
+검색 기능
+게시글 목록
+페이징
+-->
+
+<h1>게시판 CRUD</h1>
+<a href = "/post">
+    <button id = "write-btn">글쓰기</button>
+</a><br><br>
+
+<form action = "/board/search" method = "get">
+    <div class = "search">
+        <input type = "text" name = "keyword" placeholder="검색어를 입력해주세요">
+    </div>
+    <button id = "search-btn">검색</button>
+</form>
+
+<table>
+    <tr>
+        <th class = "two wide">번호</th>
+        <th class = "ten wide">글제목</th>
+        <th class = "two wide">작성자</th>
+        <th class = "three wide">작성일</th>
+    </tr>
+
+    <tbody>
+        {{#boardList}}
+            <tr>
+                <td>{{id}}</td>
+                <td><a href = "/post/{{id}}">{{title}}</a></td>
+                <td>{{writer}}</td>
+                <td>{{createdDate}}</td>
+            </tr>
+        {{/boardList}}
+    </tbody>
+</table>
+
+<tr class = "pagination justify-content-center">
+    <th class = "page-item"><a class = "page-link" href = "/?page={{previous}}"/>previous</th>
+    {{#check}}
+        <th class = "page-item"><a class = "page-link" href = "/?page={{next}}"/>next</th>
+    {{/check}}
+    {{^check}}
+        <th class = "page-item disabled"><a class = "page-link" href = "/?page={{next}}"/>next</th>
+    {{/check}}
+</tr>
+
+
+

@@ -1,0 +1,18 @@
+
+<!--
+제목, 작성자, 내용을 가져와서 수정 후 PutMapping
+-->
+
+<h1>게시글 수정</h1>
+{{#boardDto}}
+    <form action = "/post/edit/{{id}}" method = "post" id = "update-form">
+        <input type = "hidden" name = "_method" value = "put"/>
+        <input type = "hidden" name = "id" value = "{{id}}">
+
+        제목 : <input type = "text" name = "title" value = "{{title}}"><br><br><br>
+        작성자 : <input type = "text" name = "writer" value = "{{writer}}"><br><br><br>
+        내용 :
+        <textarea name = "content">{{content}}</textarea><br><br><br>
+        <button id = "update-btn">수정</button>
+    </form>
+{{/boardDto}}
